@@ -2,6 +2,11 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "cli": {
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
+  },
   "projects": {
     "clicker": {
       "projectType": "application",
@@ -9,12 +14,15 @@
         "@schematics/angular:component": {
           "style": "scss",
           "standalone": true,
+          "skipTests": true,
           "changeDetection": "OnPush"
         },
         "@schematics/angular:directive": {
+          "skipTests": true,
           "standalone": true
         },
         "@schematics/angular:pipe": {
+          "skipTests": true,
           "standalone": true
         }
       },

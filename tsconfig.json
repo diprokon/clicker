@@ -24,7 +24,9 @@
       "dom"
     ],
     "paths": {
-      "@app/store": ["src/app/store/index.ts"]
+      "@app/store": ["src/app/store/index.ts"],
+      "@app/models": ["src/app/models/index.ts"],
+      "@app/helpers": ["src/app/helpers/index.ts"],
     }
   },
   "angularCompilerOptions": {

@@ -1,6 +1,8 @@
 <h1 class="header">
-  Score: {{ score$ | async }}
+  Score: {{ score$ | async }} ({{workerPower$ | async}}/s)
 </h1>
+
+<app-shop></app-shop>
 
 <button class="the-button"
         matRipple

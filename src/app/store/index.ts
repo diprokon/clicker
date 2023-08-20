@@ -1,12 +1,17 @@
 import { provideEffects } from '@ngrx/effects';
-import { gameStateProvider, gameEffects } from './game';
+import { gameEffects, gameStateProvider } from './game';
+import { shopEffects, shopStateProvider } from './shop';
 
 export * from './game';
+export * from './shop';
+
 
 export const reducers = [
   gameStateProvider,
+  shopStateProvider,
 ];
 
-export const effects = [
-  gameEffects
-].map(effect => provideEffects(effect));
+export const effects = provideEffects(
+  gameEffects,
+  shopEffects,
+);

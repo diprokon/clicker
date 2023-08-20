@@ -29,3 +29,12 @@
   border: 0 none;
   cursor: pointer;
 }
+
+app-shop {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 20vw;
+  z-index: 1;
+}

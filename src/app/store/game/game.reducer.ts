@@ -1,7 +1,7 @@
 import { createReducer, on, provideState } from '@ngrx/store';
-import * as GameActions from './game.actions';
+import { GameActions } from './game.actions';
 
-export const GAME_FEATURE_KEY = 'game';
+export const gameFeatureKey = 'game';
 
 export interface GameState {
   score: number;
@@ -21,4 +21,7 @@ export const gameReducer = createReducer(
   ),
 );
 
-export const gameStateProvider = provideState(GAME_FEATURE_KEY, gameReducer);
+export const gameStateProvider = provideState(
+  gameFeatureKey,
+  gameReducer
+);

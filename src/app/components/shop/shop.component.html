@@ -1,0 +1,13 @@
+<mat-action-list>
+  <div mat-subheader>Products</div>
+
+  <button mat-list-item
+          *ngFor="let product of products$ | async"
+          [disabled]="!(canBuy$(product) | async)"
+          (click)="buyProduct(product)"
+  >
+    <mat-icon matListItemIcon>{{product.icon}}</mat-icon>
+    <div matListItemTitle>{{product.name}} ({{product.quantity || 0}})</div>
+    <div matListItemLine>Price: {{product.price | number: '1.0-0'}}</div>
+  </button>
+</mat-action-list>

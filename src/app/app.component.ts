@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MatRippleModule } from '@angular/material/core';
+import { GameActions, scoreSelector } from '@app/store';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatRippleModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'clicker';
+  score$ = this.store.select(scoreSelector);
+
+  constructor(private store: Store) {
+  }
+
+  theClick() {
+    this.store.dispatch(GameActions.increaseScore({ amount: 1 }));
+  }
 }
